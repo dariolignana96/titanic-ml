@@ -5,57 +5,61 @@ Analisi predittiva e classificazione della sopravvivenza dei passeggeri del Tita
 
 ## Descrizione
 
-Questo progetto affronta la celebre sfida "Titanic: Machine Learning from Disaster" di Kaggle, con l'obiettivo di costruire un modello predittivo per stimare la probabilità di sopravvivenza di un passeggero sulla base di informazioni note a bordo.
+Questo progetto affronta la sfida Kaggle "Titanic: Machine Learning from Disaster", con l'obiettivo di costruire un modello predittivo della probabilità di sopravvivenza dei passeggeri, utilizzando feature ingegnerizzate e un approccio data science completo.
 
-Le fasi principali dell'analisi includono:
-- **Esplorazione e pulizia del dataset**
-- **Analisi dei pattern di sopravvivenza**
-- **Preprocessing e feature engineering**
-- **Costruzione e valutazione di un modello di Machine Learning**
-- **Visualizzazione dei risultati**
+**Le fasi principali:**
+- Esplorazione e pulizia del dataset
+- Analisi statistica e pattern di sopravvivenza
+- Preprocessing, feature engineering e scaling
+- Costruzione e validazione di modelli ML
+- Visualizzazione e interpretazione dei risultati
 
 ## Struttura del repository
 
-- `data/` — Contiene il dataset di training
-- `notebooks/` — Notebook Jupyter con l'intero workflow di analisi
+- `data/` — Dataset di training (non incluso per motivi di licenza, scaricabile da Kaggle)
+- `notebooks/` — Workflow Jupyter completo e riproducibile
 - `titanic_analysis.py` — Script Python standalone per la pipeline
+- `Dockerfile` — Ambiente runtime completamente replicabile con Docker
+- `.dockerignore` — Esclude virtualenv e file inutili dal build context
 
-## Principali step dell'analisi
-
-1. **Setup e caricamento dati**  
-   Importazione librerie, analisi esplorativa, descrizione e visualizzazione preliminare.
-2. **Data Cleaning & Preprocessing**  
-   Gestione valori mancanti, encoding delle variabili categoriche e selezione delle feature.
-3. **Modellazione**  
-   Addestramento di un classificatore Random Forest, suddivisione train/test e validazione.
-4. **Valutazione e metriche**  
-   Output di accuracy, classification report, visualizzazioni di confronto sulle predizioni.
-5. **Conclusioni**  
-   Evidenziazione dei risultati principali e spunti su come migliorare il modello.
-
-## Come eseguire il progetto
+## Esecuzione con Docker (consigliato, zero setup locale!)
 
 1. Clona la repository:
 
-   git clone https://github.com/dariolignana96/titanic-ml.git
-   
-2. Crea e attiva una virtual environment:
+    git clone https://github.com/dariolignana96/titanic-ml.git
+    cd titanic-ml
 
-   python -m venv .venv
-   # Windows
-   .venv\Scripts\activate
-   # macOS/Linux
-   source .venv/bin/activate
-   
-3. Installa le dipendenze:
+2. Build e avvia il progetto con Docker:
 
-   pip install -r requirements.txt
-   
-4. Avvia Jupyter Notebook:
+    docker build -t titanic-ml .
+    docker run -p 8888:8888 titanic-ml
+    
+    Copia/incolla il link Jupyter (con token) dal terminale o dai log di Docker Desktop nel browser.
 
-   jupyter notebook
+3. Accedi a Jupyter Notebook:
+   - Troverai il workflow completo nella cartella `notebooks/`.
 
-   e segui le celle nel file `notebooks/titanic_analysis.ipynb`
+## Esecuzione manuale (senza Docker)
+
+1. Crea e attiva un virtual environment:
+
+    python -m venv .venv
+    # Windows
+    .venv\Scripts\activate
+    # macOS/Linux
+    source .venv/bin/activate
+    
+
+2. Installa le dipendenze:
+
+    pip install -r requirements.txt
+    
+
+3. Avvia Jupyter Notebook:
+
+    jupyter notebook
+    
+    e segui le analisi nel file `notebooks/titanic_analysis.ipynb`
 
 ## Dipendenze principali
 
@@ -66,7 +70,7 @@ Le fasi principali dell'analisi includono:
 - scikit-learn
 - jupyter
 
-_Tutte le dipendenze sono elencate in `requirements.txt`._
+_Tutte elencate nel file `requirements.txt`._
 
 ## Dataset
 
@@ -74,7 +78,5 @@ Dataset Titanic disponibile su [Kaggle](https://www.kaggle.com/c/titanic).
 
 ## Credits
 
-Progetto realizzato da [Dario Lignana](https://github.com/dariolignana96) — ispirato alla sfida Kaggle Titanic.
-
-***
+Realizzato da [Dario Lignana](https://github.com/dariolignana96), ispirato dalla community Kaggle.
 
