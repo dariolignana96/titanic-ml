@@ -2,6 +2,7 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
+# Solo file utili, fai attenzione al .dockerignore!
 COPY . /app
 
 RUN pip install --upgrade pip
