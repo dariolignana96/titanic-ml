@@ -175,5 +175,4 @@ Puoi clonarlo, modificarlo e adattarlo per i tuoi esperimenti o per mostrarlo in
 - [Documentazione Scikit-learn](https://scikit-learn.org/)
 - [Documentazione Pandas](https://pandas.pydata.org/)
 - [Documentazione Jupyter](https://jupyter.org/)
-git add README.md
 ---
